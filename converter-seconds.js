@@ -6,11 +6,19 @@ function converterSeconds(sec) {
 
    let totalTime = ``;
 
+   //формат без 0 в hours
    if (hours >= 1) {
       totalTime = `${hours}:${minutes}:${seconds}`;
    } else {
       totalTime = `${minutes}:${seconds}`;
    }
+
+   //формат вывода с 0 в hours и в minutes, seconds, если они однозначные.
+   /* 	totalTime = [
+		hours.toString().padStart(2, '0'),
+		minutes.toString().padStart(2, '0'),
+		seconds.toString().padStart(2, '0'),
+	].join(':'); */
 
    return totalTime;
 }
